@@ -1,6 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { InjectConnection, MongooseModule } from '@nestjs/mongoose';
+import {
+  InjectConnection,
+  ModelDefinition,
+  MongooseModule,
+} from '@nestjs/mongoose';
 import { Connection } from 'mongoose';
 import { ConfigModule } from '../config/config.module';
 
@@ -22,5 +26,9 @@ export class DatabaseModule {
     } else {
       console.log('DB is not connected!');
     }
+  }
+
+  static forFeature(models: ModelDefinition[]) {
+    return MongooseModule.forFeature(models);
   }
 }
