@@ -1,0 +1,23 @@
+services:
+  reservations:
+    build:
+      context: .
+      dockerfile: ./apps/reservations/Dockerfile
+      target: development
+    command: pnpm run start:dev reservations
+    ports:
+      - '7000:7000'
+    volumes:
+      - .:/usr/src/app
+  auth:
+    build:
+      context: .
+      dockerfile: ./apps/auth/Dockerfile
+      target: development
+    command: pnpm run start:dev auth
+    ports:
+      - '7001:7001'
+    volumes:
+      - .:/usr/src/app
+  mongo:
+    image: mongo
