@@ -43,6 +43,24 @@
       "compilerOptions": {
         "tsConfigPath": "apps/payments/tsconfig.app.json"
       }
+    },
+    "microservices": {
+      "type": "application",
+      "root": "apps/microservices",
+      "entryFile": "main",
+      "sourceRoot": "apps/microservices/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/microservices/tsconfig.app.json"
+      }
+    },
+    "notifications": {
+      "type": "application",
+      "root": "apps/notifications",
+      "entryFile": "main",
+      "sourceRoot": "apps/notifications/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notifications/tsconfig.app.json"
+      }
     }
   },
   "monorepo": true,
